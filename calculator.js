@@ -33,10 +33,11 @@
     }    
     //total price changes
     function totalPrice (array){
-	    //should not use array[0] and array[1] to get their price,
-	    // because we do not know how much items there will be in the basket.
-	    //Currently I have no idea about how to change this.
-	    let total=parseFloat(array[0].innerHTML)+parseFloat(array[1].innerHTML);
+	    let total=0;
+	    for (let i = 0; i< array.length; i++){
+	    	total+=parseFloat(array[i].innerHTML);
+	    	console.log(total);
+	    } 
 	    subtotal.innerHTML= total + " C$";
 	    shippingFee(total);
     }
